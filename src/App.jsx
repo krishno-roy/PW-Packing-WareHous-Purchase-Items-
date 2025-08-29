@@ -197,103 +197,10 @@ export default function PurchaseForm() {
           </button>
         </form>
 
-        {/* Search */}
-        <div className="mt-6 flex gap-2 bg-gray-900 p-4 rounded-lg shadow-lg border border-gray-800">
-          <input
-            type="text"
-            placeholder="🔍 সার্চ করুন (Item, Location, Store, Phone)..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            onKeyPress={handleSearch}
-            className="w-full p-3 border border-gray-700 rounded bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          />
-          <button
-            onClick={() => fetchData(search)}
-            className="bg-blue-600 text-white px-4 py-3 rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 whitespace-nowrap"
-          >
-            Search
-          </button>
-        </div>
+       
+       
 
-        {/* Print Button */}
-        <div className="mt-4">
-          <button
-            onClick={() => window.print()}
-            className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-          >
-            🖨️ Print
-          </button>
-        </div>
-
-        {/* Table */}
-        <div className="mt-4 overflow-x-auto bg-gray-900 p-4 rounded-lg shadow-lg border border-gray-800">
-          {isLoading ? (
-            <div className="text-center py-8">
-              <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
-              <p className="mt-2">Loading data...</p>
-            </div>
-          ) : (
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="bg-gray-800">
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Date
-                  </th>
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Item
-                  </th>
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Quantity
-                  </th>
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Unit
-                  </th>
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Price
-                  </th>
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Total
-                  </th>
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Location
-                  </th>
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Store
-                  </th>
-                  <th className="p-3 text-left border-b border-gray-700">
-                    Phone
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {records.length > 0 ? (
-                  records.map((rec, index) => (
-                    <tr
-                      key={index}
-                      className="border-b border-gray-800 hover:bg-gray-800"
-                    >
-                      <td className="p-3">{rec.Date}</td>
-                      <td className="p-3">{rec["Item Name"]}</td>
-                      <td className="p-3">{rec.Quantity}</td>
-                      <td className="p-3">{rec.Unit}</td>
-                      <td className="p-3">{rec["Single Price"]}</td>
-                      <td className="p-3">{rec["Total Price"]}</td>
-                      <td className="p-3">{rec.Location}</td>
-                      <td className="p-3">{rec["Store Name"]}</td>
-                      <td className="p-3">{rec.Phone}</td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="9" className="text-center p-4 text-gray-400">
-                      No records found
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          )}
-        </div>
+       
       </div>
     </div>
   );
